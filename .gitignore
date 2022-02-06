@@ -1,0 +1,5 @@
+backend/node_modules/
+fronend/node_modules/
+.env
+.idea
+.vscode

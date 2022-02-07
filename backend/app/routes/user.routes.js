@@ -1,7 +1,9 @@
 const router = require('express').Router()
 
 // Require controller modules
-const {userController} = require("../controllers/UserController");
+const {userController} = require("../controllers/user.controller");
+
+const {userAuthorization} = require("../middlewares/authorization.middleware");
 
 // All
 router.all('/', async (req, res, next) => {
@@ -9,15 +11,22 @@ router.all('/', async (req, res, next) => {
     next()
 })
 
-// Create new user
+// POST - Create new user
 router.post('/create', userController.create)
 
-// user sign in
-// user sign out
-// user request reset password
-// user reset password
+// POST - Login
+router.post('/login', userController.login)
 
-// user profile
-router.get('/profile', userController.profile)
+// POST - Request reset password
+router.post('/request-reset-password', userAuthorization, userController.requestResetPassword)
+
+// PATCH - Reset password
+router.patch('/reset-password', userAuthorization, userController.resetPassword)
+
+// DELETE - Logout
+router.post('/logout', userAuthorization, userController.logout)
+
+// GET - Get user profile
+router.get('/profile', userAuthorization, userController.profile)
 
 module.exports = router

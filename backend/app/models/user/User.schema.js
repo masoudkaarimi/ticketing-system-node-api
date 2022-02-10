@@ -38,6 +38,10 @@ const UserSchema = new Schema({
         // },
     }
 }, { timestamps: true })
+// {
+//     // Make Mongoose use Unix time (seconds since Jan 1, 1970)
+//     timestamps: { currentTime: () => Math.floor(Date.now() / 1000) }
+// }
 
 // UserSchema.pre('save', (next) => {
 //     const currentDate = new Date();

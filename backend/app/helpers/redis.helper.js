@@ -1,7 +1,11 @@
-const redis = require('redis')
-const client = redis.createClient(process.env.REDIS_URL)
+const redis = require("redis")
+const client = redis.createClient(process.env.REDIS_URL);
 
-client.on('error', (error) => console.log('Redis client => ', error))
+client.on('connect', (error) => console.log("Redis connected!"))
+client.on('end', (error) => console.log("Redis disconnected!"))
+client.on('reconnecting', (error) => console.log("Redis reconnecting!"))
+client.on('error', (error) =>  console.log('Redis client => ', error))
+
 
 // Set JWT
 exports.setJWT = (key, value) => {

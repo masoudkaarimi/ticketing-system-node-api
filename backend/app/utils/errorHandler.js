@@ -1,3 +1,4 @@
+// Error handler
 const errorHandler = (error, res) => {
     console.log('Error Handler => ', error)
     res.status(error.status || 500)

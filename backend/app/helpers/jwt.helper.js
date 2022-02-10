@@ -10,6 +10,7 @@ exports.createAccessJWT = async (email, _id) => {
             process.env.JWT_ACCESS_SECRET,
             {expiresIn: process.env.JWT_ACCESS_SECRET_EXP_DAY})
 
+        // Set Access JWT on Redis
         await setJWT(accessJWT, _id)
 
         return Promise.resolve(accessJWT)
@@ -27,6 +28,7 @@ exports.createRefreshJWT = async (email, _id) => {
             process.env.JWT_REFRESH_SECRET,
             {expiresIn: process.env.JWT_REFRESH_SECRET_EXP_DAY})
 
+        // Stor refresh JWT on MongoDB
         await storeUserRefreshJWT(_id, refreshJWT)
 
         return Promise.resolve(refreshJWT)

@@ -13,7 +13,7 @@ exports.insertUser = (userObject) => {
 }
 
 // Get user by email
-exports.getUserById = (email) => {
+exports.getUserByEmail = (email) => {
     return new Promise((resolve, reject) => {
         if (!email) return false
 

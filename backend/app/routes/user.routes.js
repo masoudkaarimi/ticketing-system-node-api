@@ -12,7 +12,7 @@ router.all('/', async (req, res, next) => {
 })
 
 // POST - Create new user
-router.post('/create', userController.create)
+router.post('/create', userController.createUser)
 
 // POST - Login
 router.post('/login', userController.login)
@@ -24,7 +24,7 @@ router.post('/request-reset-password', userAuthorization, userController.request
 router.patch('/reset-password', userAuthorization, userController.resetPassword)
 
 // DELETE - Logout
-router.post('/logout', userAuthorization, userController.logout)
+router.delete('/logout', userAuthorization, userController.logout)
 
 // GET - Get user profile
 router.get('/profile', userAuthorization, userController.profile)

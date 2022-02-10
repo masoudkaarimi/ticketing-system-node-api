@@ -1,8 +1,6 @@
 const router = require('express').Router()
 
-// Require controller modules
 const {userController} = require("../controllers/user.controller");
-
 const {userAuthorization} = require("../middlewares/authorization.middleware");
 
 // All

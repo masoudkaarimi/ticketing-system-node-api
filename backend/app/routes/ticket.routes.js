@@ -22,18 +22,18 @@ router.all('/', (req, res, next) => {
 router.post('/create', validation.createNewTicket, userAuthorization, ticketController.create)
 
 // GET - Get all tickets by user id
-router.get('/tickets', userAuthorization, ticketController.getTicketsByUserId)
+router.get('/', userAuthorization, ticketController.getTicketsByUserId)
 
-// GET - Get tickets ticket id
-router.get('/tickets:/_id', userAuthorization, ticketController.getTicketsByTicketId)
+// GET - Get tickets by ticket id
+router.get('/:_id', userAuthorization, ticketController.getTicketsByTicketId)
 
 // PUT - Update reply message from client
-router.put('/:_id', validation.replyTicketMessage, userAuthorization, ticketController.updateReplyMessage)
+router.put('/update/:_id', validation.replyTicketMessage, userAuthorization, ticketController.ReplyMessage)
 
 // PATCH - Update ticket status to close
-router.patch('/close-ticket/:_id', userAuthorization, ticketController.updateTicketClose)
+router.patch('/close/:_id', userAuthorization, ticketController.closeTicket)
 
 // DELETE - Delete a ticket
-router.delete('/ticket:_id', userAuthorization, ticketController.deleteTicket)
+router.delete('/delete/:_id', userAuthorization, ticketController.deleteTicket)
 
 module.exports = router

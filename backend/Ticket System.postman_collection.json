@@ -52,7 +52,7 @@
 			"name": "Ticket",
 			"item": [
 				{
-					"name": "Get Tickets By User Id",
+					"name": "Get All Tickets By User Id",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -162,6 +162,42 @@
 					"response": []
 				},
 				{
+					"name": "Reply Message",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxMTM5NywiZXhwIjoxNjQ0NTIwNjM3fQ.ERk8qbDZAj-PuOWtoYV6ZVEFxcpnbdh323S6Ftz_9o8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sender\": \"Masoud\",\r\n  \"message\": \"1 Contact form not \"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/api/ticket/update/6205426b3d3462e9da4fc7ca",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"ticket",
+								"update",
+								"6205426b3d3462e9da4fc7ca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Delete Ticket",
 					"request": {
 						"method": "DELETE",
@@ -233,7 +269,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Tickets By Ticket Id",
+					"name": "Get Single Ticket By Id",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -276,7 +312,7 @@
 			"name": "Auth",
 			"item": [
 				{
-					"name": "Create New User",
+					"name": "Regisetr",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -286,8 +322,8 @@
 								"type": "text"
 							},
 							{
-								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxMTM5NywiZXhwIjoxNjQ0NTIwNjM3fQ.ERk8qbDZAj-PuOWtoYV6ZVEFxcpnbdh323S6Ftz_9o8",
+								"key": "",
+								"value": "",
 								"type": "text"
 							}
 						],
@@ -341,7 +377,7 @@
 					"response": []
 				},
 				{
-					"name": "Refresh token JWT",
+					"name": "Refresh Token JWT",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},

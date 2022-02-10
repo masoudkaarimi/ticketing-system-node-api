@@ -1,0 +1,491 @@
+{
+	"info": {
+		"_postman_id": "0ea59e72-94b0-462d-8502-6bea5f98cf90",
+		"name": "Ticket System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUwODIyOSwiZXhwIjoxNjQ0NTE3NDY5fQ.T9JIsZ-FKrGcv1V4jvQnt2IgZajXvxTGmQR-5TbDcug",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"6201203c60d35f7e322653ea\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/api/user/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ticket",
+			"item": [
+				{
+					"name": "Get Tickets By User Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUwODIyOSwiZXhwIjoxNjQ0NTE3NDY5fQ.T9JIsZ-FKrGcv1V4jvQnt2IgZajXvxTGmQR-5TbDcug",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:9000/api/ticket/",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"ticket",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new Ticket",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxMTM5NywiZXhwIjoxNjQ0NTIwNjM3fQ.ERk8qbDZAj-PuOWtoYV6ZVEFxcpnbdh323S6Ftz_9o8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"message\": \"this is the 3 reply\",\r\n  \"sender\": \"Masoud\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/api/ticket/update/6205426b3d3462e9da4fc7ca",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"ticket",
+								"update",
+								"6205426b3d3462e9da4fc7ca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Close Ticket",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxMTM5NywiZXhwIjoxNjQ0NTIwNjM3fQ.ERk8qbDZAj-PuOWtoYV6ZVEFxcpnbdh323S6Ftz_9o8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:9000/api/ticket/close/6204c6238f6f461910c16971",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"ticket",
+								"close",
+								"6204c6238f6f461910c16971"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Ticket",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxMTM5NywiZXhwIjoxNjQ0NTIwNjM3fQ.ERk8qbDZAj-PuOWtoYV6ZVEFxcpnbdh323S6Ftz_9o8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:9000/api/ticket/delete/6204c6238f6f461910c16971",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"ticket",
+								"delete",
+								"6204c6238f6f461910c16971"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new Ticket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxMTM5NywiZXhwIjoxNjQ0NTIwNjM3fQ.ERk8qbDZAj-PuOWtoYV6ZVEFxcpnbdh323S6Ftz_9o8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"Form Issue 14\",\r\n  \"sender\": \"Masoud\",\r\n  \"message\": \"1 Contact form not working. please fix it as soon as possible\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/api/ticket/create",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"ticket",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tickets By Ticket Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUwODIyOSwiZXhwIjoxNjQ0NTE3NDY5fQ.T9JIsZ-FKrGcv1V4jvQnt2IgZajXvxTGmQR-5TbDcug",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:9000/api/ticket/6205426b3d3462e9da4fc7ca",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"ticket",
+								"6205426b3d3462e9da4fc7ca"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Create New User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxMTM5NywiZXhwIjoxNjQ0NTIwNjM3fQ.ERk8qbDZAj-PuOWtoYV6ZVEFxcpnbdh323S6Ftz_9o8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Masoud karimi\",\r\n    \"phone\": \"09015906120\",\r\n    \"email\": \"masoudk1466@gmail.com\",\r\n    \"password\": \"1234\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/api/user/create",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"masoudk1466@gmail.com\",\r\n  \"password\": \"new-password\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/api/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh token JWT",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxMTM5NywiZXhwIjoxNjQ3MTAzMzk3fQ.wSrqDe4hdHCaJWq47LrJOxMaP4pyBME_vszQrYIQH88",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:9000/api/token",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUwODIyOSwiZXhwIjoxNjQ0NTE3NDY5fQ.T9JIsZ-FKrGcv1V4jvQnt2IgZajXvxTGmQR-5TbDcug",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"masoudk1466@gmail.com\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/api/user/request-reset-password",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"user",
+								"request-reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUwODIyOSwiZXhwIjoxNjQ0NTE3NDY5fQ.T9JIsZ-FKrGcv1V4jvQnt2IgZajXvxTGmQR-5TbDcug",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"masoudk1466@gmail.com\",\r\n  \"pin\": \"976680\",\r\n  \"newPassword\": \"new-password\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/api/user/reset-password",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"user",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDM5MDg2NSwiZXhwIjoxNjQ1Njg2ODY1fQ.PMSS8eP_RZqcT7-8HcnSO-WDRvdrS4mj1nlghrb9oqY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:9000/api/user/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

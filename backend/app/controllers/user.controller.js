@@ -43,7 +43,7 @@ const login = async (req, res) => {
 
     const result = await comparePassword(password, mainPassword)
     if (!result)
-        return res.status(400).json({status: 'error', message: 'Invalid password'})
+        return res.status(400).json({status: 'error', message: 'Incorrect password'})
 
     // Create accessJWT and refreshJWT
     const accessJWT = await createAccessJWT(user.email, `${user._id}`)

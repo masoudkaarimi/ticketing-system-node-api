@@ -1,0 +1,113 @@
+### ==================== Auth ====================
+### Register
+POST http://localhost:9000/api/user/create
+Content-Type: application/json
+
+{
+  "name": "Masoud karimi",
+  "phone": "09015906120",
+  "email": "masoudk1466@gmail.com",
+  "password": "1234"
+}
+
+
+### Login
+POST localhost:9000/api/user/login
+Content-Type: application/json
+
+{
+  "email": "masoudk1466@gmail.com",
+  "password": "new-password"
+}
+
+
+### Refresh Token JWT
+GET localhost:9000/api/token
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxNTAwOCwiZXhwIjoxNjQ3MTA3MDA4fQ.4I2ya-RTbLIZQOan537I2U9gPPEOyXmpbhyx2Uu5-9s
+
+
+### Request Reset Password
+POST localhost:9000/api/user/request-reset-password
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxNTAyMiwiZXhwIjoxNjQ0NTI0MjYyfQ.7fiboDZIYE0dlof8KAAuqdwLaDrSvPf2FxydtfM9B2o
+
+{
+  "email": "masoudk1466@gmail.com"
+}
+
+
+### Reset Password
+PATCH localhost:9000/api/user/reset-password
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxNTAyMiwiZXhwIjoxNjQ0NTI0MjYyfQ.7fiboDZIYE0dlof8KAAuqdwLaDrSvPf2FxydtfM9B2o
+
+{
+  "email": "masoudk1466@gmail.com",
+  "pin": "294303",
+  "newPassword": "new-password"
+}
+
+
+### Logout
+DELETE localhost:9000/api/user/logout
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxNTIwOCwiZXhwIjoxNjQ0NTI0NDQ4fQ.7qdmiBr8A5AtFjqcyO5iy4AmYywcnxxGFU84d-3Qm74
+
+
+
+
+
+
+
+### ==================== User ====================
+### Get User Profile
+GET localhost:9000/api/user/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxNTAyMiwiZXhwIjoxNjQ0NTI0MjYyfQ.7fiboDZIYE0dlof8KAAuqdwLaDrSvPf2FxydtfM9B2o
+
+
+
+
+
+
+
+### ==================== Ticket ====================
+### Add new Ticket
+POST localhost:9000/api/ticket/create
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxNTAyMiwiZXhwIjoxNjQ0NTI0MjYyfQ.7fiboDZIYE0dlof8KAAuqdwLaDrSvPf2FxydtfM9B2o
+
+{
+  "subject": "Problem 1 subject",
+  "sender": "Masoud",
+  "message": "This is a problem 1 message"
+}
+
+
+### Get All Tickets By User Id
+GET localhost:9000/api/ticket/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxNTAyMiwiZXhwIjoxNjQ0NTI0MjYyfQ.7fiboDZIYE0dlof8KAAuqdwLaDrSvPf2FxydtfM9B2o
+
+
+### Get Single Ticket By Id
+GET localhost:9000/api/ticket/6205426b3d3462e9da4fc7ca
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxNTAyMiwiZXhwIjoxNjQ0NTI0MjYyfQ.7fiboDZIYE0dlof8KAAuqdwLaDrSvPf2FxydtfM9B2o
+
+
+### Reply Message
+PUT http://localhost:9000/api/ticket/update/6205426b3d3462e9da4fc7ca
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxNTAyMiwiZXhwIjoxNjQ0NTI0MjYyfQ.7fiboDZIYE0dlof8KAAuqdwLaDrSvPf2FxydtfM9B2o
+
+{
+  "message": "this is the 1 reply",
+  "sender": "Masoud"
+}
+
+
+### Close Ticket
+PATCH http://localhost:9000/api/ticket/close/6205426b3d3462e9da4fc7ca
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxNTAyMiwiZXhwIjoxNjQ0NTI0MjYyfQ.7fiboDZIYE0dlof8KAAuqdwLaDrSvPf2FxydtfM9B2o
+
+
+### Delete Ticket
+DELETE  http://localhost:9000/api/ticket/delete/62054762110c3e5e1665708a
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hc291ZGsxNDY2QGdtYWlsLmNvbSIsImlhdCI6MTY0NDUxNTAyMiwiZXhwIjoxNjQ0NTI0MjYyfQ.7fiboDZIYE0dlof8KAAuqdwLaDrSvPf2FxydtfM9B2o
